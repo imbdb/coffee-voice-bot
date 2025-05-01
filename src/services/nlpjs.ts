@@ -68,6 +68,44 @@ export class NLPJSResponseEngine implements ResponseEngine {
       this.nlp.addDocument("en", "Cappuccino", "order.coffee.type");
       this.nlp.addDocument("en", "Americano", "order.coffee.type");
 
+      const coffeeTypes = ["Latte", "Espresso", "Cappuccino", "Americano"];
+      coffeeTypes.forEach((type) => {
+        this.nlp.addDocument("en", ` I want ${type}`, "order.coffee.type");
+        this.nlp.addDocument(
+          "en",
+          ` I would like ${type}`,
+          "order.coffee.type"
+        );
+        this.nlp.addDocument("en", ` I need ${type}`, "order.coffee.type");
+        this.nlp.addDocument("en", ` I want a ${type}`, "order.coffee.type");
+        this.nlp.addDocument(
+          "en",
+          ` I would like a ${type}`,
+          "order.coffee.type"
+        );
+        this.nlp.addDocument("en", ` I need a ${type}`, "order.coffee.type");
+        this.nlp.addDocument(
+          "en",
+          ` I want ${type} coffee`,
+          "order.coffee.type"
+        );
+        this.nlp.addDocument(
+          "en",
+          ` I would like ${type} coffee`,
+          "order.coffee.type"
+        );
+        this.nlp.addDocument(
+          "en",
+          ` I need ${type} coffee`,
+          "order.coffee.type"
+        );
+        this.nlp.addDocument(
+          "en",
+          ` I want a ${type} coffee`,
+          "order.coffee.type"
+        );
+      });
+
       // Adds the answers for confirming coffee type
       this.nlp.addAnswer(
         "en",
