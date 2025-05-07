@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { useMessages } from "../context/MessageContext";
+import { useLanguage } from "../hooks/useLanguage";
 import { User, Bot } from "lucide-react";
 
 const MessageList: React.FC = () => {
   const { messages } = useMessages();
+  const { t } = useLanguage();
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to the most recent message
@@ -17,11 +19,10 @@ const MessageList: React.FC = () => {
         <div className="h-full flex flex-col items-center justify-center text-center px-4">
           <div className="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-2xl max-w-md">
             <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-              Welcome to Coffee Bot
+              {t("welcome")}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              Click the microphone button and start speaking. I'll listen and
-              respond to what you say.
+              {t("welcomeInstructions")}
             </p>
           </div>
         </div>

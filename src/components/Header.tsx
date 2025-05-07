@@ -1,6 +1,7 @@
 import React from "react";
 import { Mic, Moon, Settings, Sun } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface HeaderProps {
   toggleSettings: () => void;
@@ -20,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSettings }) => {
         </div>
 
         <div className="flex items-center space-x-4">
+          <LanguageSwitcher />
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
