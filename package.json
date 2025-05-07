@@ -12,6 +12,7 @@
   "dependencies": {
     "@nlpjs/core": "^5.0.0-alpha.5",
     "@nlpjs/lang-en-min": "^5.0.0-alpha.5",
+    "@nlpjs/lang-hi": "^5.0.0-alpha.5",
     "@nlpjs/nlp": "^5.0.0-alpha.5",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
